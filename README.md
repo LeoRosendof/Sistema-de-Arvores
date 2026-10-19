@@ -214,7 +214,7 @@ A Rubro-Negra continua sendo a melhor escolha quando as chaves chegam em ordem a
 predominam as escritas. Nesse caso ela fez 16% menos rotações, e a inserção medida foi
 consistentemente mais rápida.
 
-A discussão completa está na apresentação em PDF.
+A discussão completa está na apresentação: [`docs/apresentacao.pdf`](docs/apresentacao.pdf) (fonte editável em [`docs/apresentacao.pptx`](docs/apresentacao.pptx)).
 
 ## 8. Estrutura do repositório
 
