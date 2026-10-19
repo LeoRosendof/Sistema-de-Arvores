@@ -1,0 +1,296 @@
+==================================================================
+  Amazon Logistics - Black Friday
+  Protótipo de indexação de encomendas com árvores balanceadas
+==================================================================
+Estrutura selecionada: Árvore AVL
+
+--- Árvore AVL | 0 encomenda(s) | altura 0 | modo detalhado: desligado ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 7
+Modo detalhado LIGADO: cada rotação/ajuste será descrito e a árvore redesenhada (até 40 nós).
+
+--- Árvore AVL | 0 encomenda(s) | altura 0 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 1
+ID(s) a inserir: 10 20 30 40 50 25
+ID 10 inserido.
+  (nenhum ajuste de balanceamento foi necessário)
+    10 (fb=0)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+ID 20 inserido.
+  (nenhum ajuste de balanceamento foi necessário)
+    /-- 20 (fb=0)
+    10 (fb=-1)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+ID 30 inserido.
+  > Nó 10 com FB=-2: caso Direita-Direita (rotação simples à esquerda)
+  >   rotação à esquerda em 10: 20 sobe e vira raiz da subárvore
+    /-- 30 (fb=0)
+    20 (fb=0)
+    \-- 10 (fb=0)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+ID 40 inserido.
+  (nenhum ajuste de balanceamento foi necessário)
+        /-- 40 (fb=0)
+    /-- 30 (fb=-1)
+    20 (fb=-1)
+    \-- 10 (fb=0)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+ID 50 inserido.
+  > Nó 30 com FB=-2: caso Direita-Direita (rotação simples à esquerda)
+  >   rotação à esquerda em 30: 40 sobe e vira raiz da subárvore
+        /-- 50 (fb=0)
+    /-- 40 (fb=0)
+    |   \-- 30 (fb=0)
+    20 (fb=-1)
+    \-- 10 (fb=0)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+ID 25 inserido.
+  > Nó 20 com FB=-2 e filho direito 40 com FB=+1: caso Direita-Esquerda (rotação dupla)
+  >   rotação à direita em 40: 30 sobe e vira raiz da subárvore
+  >   rotação à esquerda em 20: 30 sobe e vira raiz da subárvore
+        /-- 50 (fb=0)
+    /-- 40 (fb=-1)
+    30 (fb=0)
+    |   /-- 25 (fb=0)
+    \-- 20 (fb=0)
+        \-- 10 (fb=0)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+
+--- Árvore AVL | 6 encomenda(s) | altura 3 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 1
+ID(s) a inserir: 30
+ID 30 já existe: inserção ignorada (IDs de encomenda são únicos).
+  (nenhum ajuste de balanceamento foi necessário)
+        /-- 50 (fb=0)
+    /-- 40 (fb=-1)
+    30 (fb=0)
+    |   /-- 25 (fb=0)
+    \-- 20 (fb=0)
+        \-- 10 (fb=0)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+
+--- Árvore AVL | 6 encomenda(s) | altura 3 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 3
+ID(s) a buscar: 25 99
+ID 25 encontrado (filhos: 0) após 3 comparação(ões).
+ID 99 não encontrado (3 comparação(ões)).
+
+--- Árvore AVL | 6 encomenda(s) | altura 3 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 4
+Percurso em ordem (6 IDs):
+  10, 20, 25, 30, 40, 50
+
+--- Árvore AVL | 6 encomenda(s) | altura 3 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 2
+ID(s) a remover: 99
+ID 99 não existe: nada foi removido.
+  (nenhum ajuste de balanceamento foi necessário)
+        /-- 50 (fb=0)
+    /-- 40 (fb=-1)
+    30 (fb=0)
+    |   /-- 25 (fb=0)
+    \-- 20 (fb=0)
+        \-- 10 (fb=0)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+
+--- Árvore AVL | 6 encomenda(s) | altura 3 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 2
+ID(s) a remover: 10
+ID 10 removido.
+  (nenhum ajuste de balanceamento foi necessário)
+        /-- 50 (fb=0)
+    /-- 40 (fb=-1)
+    30 (fb=0)
+    |   /-- 25 (fb=0)
+    \-- 20 (fb=-1)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+
+--- Árvore AVL | 5 encomenda(s) | altura 3 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 2
+ID(s) a remover: 40
+ID 40 removido.
+  (nenhum ajuste de balanceamento foi necessário)
+    /-- 50 (fb=0)
+    30 (fb=+1)
+    |   /-- 25 (fb=0)
+    \-- 20 (fb=-1)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+
+--- Árvore AVL | 4 encomenda(s) | altura 3 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 2
+ID(s) a remover: 30
+ID 30 removido.
+  > Nó 30 tem dois filhos: será substituído pelo sucessor 50
+  > Nó 50 com FB=+2 e filho esquerdo 20 com FB=-1: caso Esquerda-Direita (rotação dupla)
+  >   rotação à esquerda em 20: 25 sobe e vira raiz da subárvore
+  >   rotação à direita em 50: 25 sobe e vira raiz da subárvore
+    /-- 50 (fb=0)
+    25 (fb=0)
+    \-- 20 (fb=0)
+    Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+
+--- Árvore AVL | 3 encomenda(s) | altura 2 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 5
+/-- 50 (fb=0)
+25 (fb=0)
+\-- 20 (fb=0)
+Legenda: chave (fb = fator de balanceamento = altura esq - altura dir)
+
+--- Árvore AVL | 3 encomenda(s) | altura 2 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 6
+Estrutura ............ Árvore AVL
+Encomendas (nós) ..... 3
+Altura ............... 2
+Altura mínima possível 2   (ceil(log2(n+1)))
+Limite teórico ....... 3,02 (1,44*log2(n+2) - 0,328)
+Rotações ............. 6 (à esquerda: 4, à direita: 2)
+Recolorações ......... 0 (a AVL não usa cores)
+Comparações em buscas  6
+Propriedades ......... OK: todas as propriedades da estrutura estão válidas.
+
+--- Árvore AVL | 3 encomenda(s) | altura 2 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 0
+Encerrando. Até logo!

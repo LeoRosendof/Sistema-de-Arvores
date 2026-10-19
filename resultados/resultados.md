@@ -1,0 +1,60 @@
+# Análise comparativa: Árvore AVL x Árvore Rubro-Negra
+
+Semente dos dados: 20251119 | repetições cronometradas: 11 (+3 de aquecimento) | Java 21.0.11
+
+## 1. Altura final x número de elementos
+
+Altura em níveis (1 nó = altura 1). Mínima possível = ceil(log2(n+1)).
+Limite AVL = 1,44·log2(n+2) - 0,328; limite Rubro-Negra = 2·log2(n+1).
+ABB = árvore de busca binária sem balanceamento (só executada até 10.000 elementos em ordem crescente/decrescente, pois degenera e fica O(n²)).
+
+| Ordem       | n         | Mínima | AVL | Rubro-Negra | Limite AVL | Limite RN | ABB comum |
+| ----------- | --------- | ------ | --- | ----------- | ---------- | --------- | --------- |
+| crescente   | 10        | 4      | 4   | 5           | 4,84       | 6,92      | 10        |
+| crescente   | 100       | 7      | 7   | 11          | 9,28       | 13,32     | 100       |
+| crescente   | 1.000     | 10     | 10  | 17          | 14,03      | 19,93     | 1.000     |
+| crescente   | 10.000    | 14     | 14  | 24          | 18,81      | 26,58     | 10.000    |
+| crescente   | 100.000   | 17     | 17  | 31          | 23,60      | 33,22     | —         |
+| crescente   | 1.000.000 | 20     | 20  | 37          | 28,38      | 39,86     | —         |
+| decrescente | 10        | 4      | 4   | 5           | 4,84       | 6,92      | 10        |
+| decrescente | 100       | 7      | 7   | 11          | 9,28       | 13,32     | 100       |
+| decrescente | 1.000     | 10     | 10  | 17          | 14,03      | 19,93     | 1.000     |
+| decrescente | 10.000    | 14     | 14  | 24          | 18,81      | 26,58     | 10.000    |
+| decrescente | 100.000   | 17     | 17  | 31          | 23,60      | 33,22     | —         |
+| decrescente | 1.000.000 | 20     | 20  | 37          | 28,38      | 39,86     | —         |
+| aleatória   | 10        | 4      | 4   | 4           | 4,84       | 6,92      | 5         |
+| aleatória   | 100       | 7      | 8   | 8           | 9,28       | 13,32     | 13        |
+| aleatória   | 1.000     | 10     | 12  | 12          | 14,03      | 19,93     | 23        |
+| aleatória   | 10.000    | 14     | 16  | 16          | 18,81      | 26,58     | 32        |
+| aleatória   | 100.000   | 17     | 20  | 20          | 23,60      | 33,22     | 38        |
+| aleatória   | 1.000.000 | 20     | 24  | 24          | 28,38      | 39,86     | 48        |
+
+## 2. Ciclo completo com n = 100.000 IDs
+
+Inserção de todos os IDs; busca de todos os IDs existentes (ordem aleatória) e de n IDs
+inexistentes; busca dos 10% de IDs mais recentes (últimos a chegar); remoção de metade dos IDs
+(ordem aleatória). Mesmos dados nas duas árvores.
+
+| Ordem       | Árvore             | Altura | Rotações (ins.) | Recolorações (ins.) | Tempo ins. (ms) | Comp./busca existente | Comp./busca inexistente | Comp./busca recentes | Tempo buscas (ms) | Rotações (rem.) | Recolorações (rem.) | Altura após rem. | Tempo rem. (ms) | Propriedades OK |
+| ----------- | ------------------ | ------ | --------------- | ------------------- | --------------- | --------------------- | ----------------------- | -------------------- | ----------------- | --------------- | ------------------- | ---------------- | --------------- | --------------- |
+| crescente   | Árvore AVL         | 17     | 99.983          | 0                   | 7,83            | 15,69                 | 17,00                   | 15,34                | 28,14             | 8.244           | 0                   | 17               | 22,73           | sim             |
+| crescente   | Árvore Rubro-Negra | 31     | 99.969          | 499.846             | 5,61            | 16,10                 | 31,00                   | 19,84                | 32,54             | 9.290           | 113.914             | 18               | 23,16           | sim             |
+| decrescente | Árvore AVL         | 17     | 99.983          | 0                   | 7,61            | 15,69                 | 17,00                   | 15,34                | 28,75             | 8.277           | 0                   | 17               | 24,92           | sim             |
+| decrescente | Árvore Rubro-Negra | 31     | 99.969          | 499.846             | 6,27            | 16,10                 | 16,00                   | 19,84                | 29,04             | 9.090           | 113.423             | 19               | 22,84           | sim             |
+| aleatória   | Árvore AVL         | 20     | 69.961          | 0                   | 24,07           | 15,93                 | 17,00                   | 17,17                | 20,28             | 18.655          | 0                   | 19               | 21,79           | sim             |
+| aleatória   | Árvore Rubro-Negra | 20     | 58.506          | 231.861             | 20,54           | 15,98                 | 16,00                   | 17,32                | 17,94             | 18.423          | 78.075              | 20               | 14,87           | sim             |
+
+## 3. Cargas mistas simulando a Black Friday (1.000.000 operações)
+
+Novos pedidos recebem IDs sequenciais (crescentes). Buscas e remoções sorteiam um ID já emitido,
+que pode já ter sido removido (cobre busca/remoção de inexistentes). Mesma sequência nas duas árvores.
+
+| Carga                               | % ins/busca/rem | Árvore             | Tamanho final | Altura final | Rotações | Recolorações | Comp./busca | Tempo total (ms) | Propriedades OK |
+| ----------------------------------- | --------------- | ------------------ | ------------- | ------------ | -------- | ------------ | ----------- | ---------------- | --------------- |
+| Rastreamento (leitura intensiva)    | 10/85/5         | Árvore AVL         | 67.184        | 17           | 105.747  | 0            | 13,85       | 108,75           | sim             |
+| Rastreamento (leitura intensiva)    | 10/85/5         | Árvore Rubro-Negra | 67.184        | 24           | 107.131  | 581.353      | 14,14       | 137,91           | sim             |
+| Operação equilibrada                | 40/40/20        | Árvore AVL         | 266.565       | 19           | 419.775  | 0            | 15,81       | 253,70           | sim             |
+| Operação equilibrada                | 40/40/20        | Árvore Rubro-Negra | 266.565       | 29           | 424.941  | 2.318.052    | 16,12       | 294,45           | sim             |
+| Pico de pedidos (escrita intensiva) | 45/10/45        | Árvore AVL         | 225.232       | 19           | 494.541  | 0            | 15,58       | 288,63           | sim             |
+| Pico de pedidos (escrita intensiva) | 45/10/45        | Árvore Rubro-Negra | 225.232       | 29           | 502.503  | 2.758.066    | 15,97       | 255,63           | sim             |
+

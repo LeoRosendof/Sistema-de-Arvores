@@ -1,0 +1,302 @@
+==================================================================
+  Amazon Logistics - Black Friday
+  Protótipo de indexação de encomendas com árvores balanceadas
+==================================================================
+Estrutura selecionada: Árvore Rubro-Negra
+
+--- Árvore Rubro-Negra | 0 encomenda(s) | altura 0 | modo detalhado: desligado ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 7
+Modo detalhado LIGADO: cada rotação/ajuste será descrito e a árvore redesenhada (até 40 nós).
+
+--- Árvore Rubro-Negra | 0 encomenda(s) | altura 0 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 1
+ID(s) a inserir: 10 20 30 40 50 25
+ID 10 inserido.
+  > Raiz 10 recolorida para preto
+    10 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 1
+ID 20 inserido.
+  (nenhum ajuste de balanceamento foi necessário)
+    /-- 20 [V]
+    10 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 1
+ID 30 inserido.
+  > Inserção caso 3 (tio preto, linha): pai 20 fica preto, avô 10 fica vermelho, rotação no avô
+  >   rotação à esquerda em 10: 20 sobe
+    /-- 30 [V]
+    20 [P]
+    \-- 10 [V]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 1
+ID 40 inserido.
+  > Inserção caso 1 (tio 10 vermelho): pai 30 e tio ficam pretos, avô 20 fica vermelho
+  > Raiz 20 recolorida para preto
+        /-- 40 [V]
+    /-- 30 [P]
+    20 [P]
+    \-- 10 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 2
+ID 50 inserido.
+  > Inserção caso 3 (tio preto, linha): pai 40 fica preto, avô 30 fica vermelho, rotação no avô
+  >   rotação à esquerda em 30: 40 sobe
+        /-- 50 [V]
+    /-- 40 [P]
+    |   \-- 30 [V]
+    20 [P]
+    \-- 10 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 2
+ID 25 inserido.
+  > Inserção caso 1 (tio 50 vermelho): pai 30 e tio ficam pretos, avô 40 fica vermelho
+        /-- 50 [P]
+    /-- 40 [V]
+    |   \-- 30 [P]
+    |       \-- 25 [V]
+    20 [P]
+    \-- 10 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 2
+
+--- Árvore Rubro-Negra | 6 encomenda(s) | altura 4 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 1
+ID(s) a inserir: 30
+ID 30 já existe: inserção ignorada (IDs de encomenda são únicos).
+  (nenhum ajuste de balanceamento foi necessário)
+        /-- 50 [P]
+    /-- 40 [V]
+    |   \-- 30 [P]
+    |       \-- 25 [V]
+    20 [P]
+    \-- 10 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 2
+
+--- Árvore Rubro-Negra | 6 encomenda(s) | altura 4 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 3
+ID(s) a buscar: 25 99
+ID 25 encontrado (filhos: 0, cor: vermelho) após 4 comparação(ões).
+ID 99 não encontrado (3 comparação(ões)).
+
+--- Árvore Rubro-Negra | 6 encomenda(s) | altura 4 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 4
+Percurso em ordem (6 IDs):
+  10, 20, 25, 30, 40, 50
+
+--- Árvore Rubro-Negra | 6 encomenda(s) | altura 4 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 2
+ID(s) a remover: 99
+ID 99 não existe: nada foi removido.
+  (nenhum ajuste de balanceamento foi necessário)
+        /-- 50 [P]
+    /-- 40 [V]
+    |   \-- 30 [P]
+    |       \-- 25 [V]
+    20 [P]
+    \-- 10 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 2
+
+--- Árvore Rubro-Negra | 6 encomenda(s) | altura 4 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 2
+ID(s) a remover: 10
+ID 10 removido.
+  > Remoção caso 1 (irmão 40 vermelho): recolorir e rotacionar no pai 20
+  >   rotação à esquerda em 20: 40 sobe
+  > Remoção caso 3 (sobrinho próximo 25 vermelho): recolorir e rotacionar no irmão 30
+  >   rotação à direita em 30: 25 sobe
+  > Remoção caso 4 (sobrinho distante 30 vermelho): recolorir e rotacionar no pai 20
+  >   rotação à esquerda em 20: 25 sobe
+    /-- 50 [P]
+    40 [P]
+    |   /-- 30 [P]
+    \-- 25 [V]
+        \-- 20 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 2
+
+--- Árvore Rubro-Negra | 5 encomenda(s) | altura 3 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 2
+ID(s) a remover: 40
+ID 40 removido.
+  > Nó 40 tem dois filhos: será substituído pelo sucessor 50
+  > Remoção caso 1 (irmão 25 vermelho): recolorir e rotacionar no pai 50
+  >   rotação à direita em 50: 25 sobe
+  > Remoção caso 2 (irmão 30 preto, sobrinhos pretos): irmão fica vermelho, sobe para 50
+  > Nó 50 (vermelho) recolorido para preto, repondo o preto removido do caminho
+    /-- 50 [P]
+    |   \-- 30 [V]
+    25 [P]
+    \-- 20 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 2
+
+--- Árvore Rubro-Negra | 4 encomenda(s) | altura 3 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 2
+ID(s) a remover: 30
+ID 30 removido.
+  (nenhum ajuste de balanceamento foi necessário)
+    /-- 50 [P]
+    25 [P]
+    \-- 20 [P]
+    Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 2
+
+--- Árvore Rubro-Negra | 3 encomenda(s) | altura 2 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 5
+/-- 50 [P]
+25 [P]
+\-- 20 [P]
+Legenda: [P] = nó preto, [V] = nó vermelho. Altura negra = 2
+
+--- Árvore Rubro-Negra | 3 encomenda(s) | altura 2 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 6
+Estrutura ............ Árvore Rubro-Negra
+Encomendas (nós) ..... 3
+Altura ............... 2
+Altura mínima possível 2   (ceil(log2(n+1)))
+Limite teórico ....... 4,00 (2*log2(n+1))
+Altura negra ......... 2
+Rotações ............. 6 (à esquerda: 4, à direita: 2)
+Recolorações ......... 23
+Comparações em buscas  7
+Propriedades ......... OK: todas as propriedades da estrutura estão válidas.
+
+--- Árvore Rubro-Negra | 3 encomenda(s) | altura 2 | modo detalhado: LIGADO ---
+  1) Inserir ID(s) de encomenda
+  2) Remover ID(s)
+  3) Buscar ID(s)
+  4) Percurso em ordem (IDs em ordem crescente)
+  5) Visualizar a estrutura da árvore
+  6) Estatísticas e verificação das propriedades
+  7) Ligar/desligar modo detalhado (rotações e cores passo a passo)
+  8) Carregar sequência de IDs (crescente, decrescente ou aleatória)
+  9) Limpar a árvore
+ 10) Trocar de estrutura (AVL <-> Rubro-Negra)
+ 11) Comparar AVL x Rubro-Negra com os mesmos dados
+  0) Sair
+Opção: 0
+Encerrando. Até logo!

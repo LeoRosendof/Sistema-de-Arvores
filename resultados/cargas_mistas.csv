@@ -1,0 +1,7 @@
+carga,insercao_pct,busca_pct,remocao_pct,arvore,operacoes,tamanho_final,altura_final,rotacoes,recoloracoes,comparacoes_medias_busca,tempo_ms,propriedades_ok
+"Rastreamento (leitura intensiva)",10,85,5,AVL,1000000,67184,17,105747,0,13.852,108.749,true
+"Rastreamento (leitura intensiva)",10,85,5,RN,1000000,67184,24,107131,581353,14.140,137.908,true
+"Operação equilibrada",40,40,20,AVL,1000000,266565,19,419775,0,15.811,253.704,true
+"Operação equilibrada",40,40,20,RN,1000000,266565,29,424941,2318052,16.124,294.446,true
+"Pico de pedidos (escrita intensiva)",45,10,45,AVL,1000000,225232,19,494541,0,15.579,288.630,true
+"Pico de pedidos (escrita intensiva)",45,10,45,RN,1000000,225232,29,502503,2758066,15.969,255.633,true

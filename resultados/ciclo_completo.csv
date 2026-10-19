@@ -1,0 +1,7 @@
+ordem,arvore,n,altura_apos_insercao,rotacoes_insercao,recoloracoes_insercao,tempo_insercao_ms,comparacoes_medias_busca_existente,comparacoes_medias_busca_inexistente,comparacoes_medias_busca_recentes,tempo_buscas_ms,rotacoes_remocao,recoloracoes_remocao,altura_apos_remocao,tempo_remocao_ms,propriedades_ok
+crescente,AVL,100000,17,99983,0,7.833,15.689,17.000,15.340,28.140,8244,0,17,22.730,true
+crescente,RN,100000,31,99969,499846,5.607,16.096,31.000,19.845,32.535,9290,113914,18,23.165,true
+decrescente,AVL,100000,17,99983,0,7.607,15.689,17.000,15.340,28.753,8277,0,17,24.917,true
+decrescente,RN,100000,31,99969,499846,6.268,16.096,16.000,19.845,29.044,9090,113423,19,22.842,true
+aleatoria,AVL,100000,20,69961,0,24.072,15.929,17.000,17.166,20.276,18655,0,19,21.792,true
+aleatoria,RN,100000,20,58506,231861,20.537,15.979,16.000,17.317,17.941,18423,78075,20,14.873,true

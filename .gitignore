@@ -1,0 +1,15 @@
+# Classes compiladas intermediárias (a versão distribuída fica em dist/)
+build/
+*.class
+
+# Enunciado do trabalho (material da disciplina, não faz parte do código)
+Trabalho_da_Unidade_II*.pdf
+
+# Arquivos de IDE e do sistema
+.vscode/
+.idea/
+*.iml
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*
