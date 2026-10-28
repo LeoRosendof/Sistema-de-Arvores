@@ -13,6 +13,7 @@ automatizados e uma análise comparativa entre as duas.
 | **Trabalho** | Unidade II: Amazon Engineering Challenge |
 | **Linguagem** | Java 17+ (sem dependências externas) |
 | **Repositório** | https://github.com/LeoRosendof/Sistema-de-Arvores |
+| **Assistência de IA** | Claude (Anthropic), ver [seção 9](#9-desenvolvimento-e-uso-de-inteligência-artificial) |
 
 ---
 
@@ -231,7 +232,23 @@ docs/        apresentação (PDF e PPTX editável) e registros de execução (ev
 build.sh / build.bat   scripts de compilação
 ```
 
-## 9. Referências
+## 9. Desenvolvimento e uso de inteligência artificial
+
+Este projeto foi desenvolvido por Leonardo Rosendo Faustino com a participação do
+**Claude**, assistente de IA da Anthropic, usado como ferramenta de apoio ao desenvolvimento
+(via Claude Code). O Claude participou, entre outras atividades:
+
+- da revisão do código das duas árvores, dos testes e do benchmark;
+- da conferência das evidências: recompilação do `.jar`, execução dos 37 testes e comparação
+  dos registros em `docs/evidencias/` e dos números da apresentação com `resultados/`;
+- de correções na apresentação e neste README, registradas no histórico do Git com a linha
+  `Co-Authored-By: Claude`.
+
+O autor é responsável pelo conteúdo entregue: as decisões de implementação, a análise e a
+recomendação técnica foram revisadas por ele, e todos os resultados apresentados podem ser
+reproduzidos com `--testes`, `--benchmark` e `docs/evidencias/gerar_evidencias.sh`.
+
+## 10. Referências
 
 - CORMEN, T. H.; LEISERSON, C. E.; RIVEST, R. L.; STEIN, C. *Algoritmos: Teoria e Prática*.
   3. ed. Rio de Janeiro: Elsevier, 2012. Cap. 12 e 13.
