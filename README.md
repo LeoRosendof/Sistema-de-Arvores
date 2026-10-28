@@ -212,8 +212,8 @@ cerca de uma rotação por inserção. A AVL, por sua vez, mantém a altura mín
 faz menos comparações exatamente nas encomendas mais rastreadas, as recentes.
 
 A Rubro-Negra continua sendo a melhor escolha quando as chaves chegam em ordem aleatória e
-predominam as escritas. Nesse caso ela fez 16% menos rotações, e a inserção medida foi
-consistentemente mais rápida.
+predominam as escritas. Nesse caso ela fez 16% menos rotações e inseriu cerca de 15% mais
+rápido. Nas três ordens testadas, a inserção da Rubro-Negra foi de 15% a 28% mais rápida.
 
 A discussão completa está na apresentação: [`docs/apresentacao.pdf`](docs/apresentacao.pdf) (fonte editável em [`docs/apresentacao.pptx`](docs/apresentacao.pptx)).
 
@@ -227,7 +227,7 @@ src/
   analise/   Benchmark (análise comparativa) e ArvoreBuscaBinaria (ABB sem balanceamento, linha de base)
 dist/        arvores-balanceadas.jar (versão compilada)
 resultados/  relatório e CSVs gerados pelo benchmark
-docs/        apresentação em PDF, gráficos e registros de execução (evidencias/)
+docs/        apresentação (PDF e PPTX editável) e registros de execução (evidencias/)
 build.sh / build.bat   scripts de compilação
 ```
 
